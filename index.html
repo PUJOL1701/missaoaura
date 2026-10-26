@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Aura</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <p class="selo">PROJETO ESPACIAL • ANO 2089</p>
+        <h1>MISSÃO <span>AURA</span></h1>
+        <p>Descubra seu perfil para a exploração de um novo planeta.</p>
+    </header>
+
+    <main class="container">
+
+        <section id="questionario" class="painel">
+            <div class="introducao">
+                <span class="icone">✦</span>
+                <h2>Identificação do explorador</h2>
+                <p>Responda às perguntas e descubra sua função na missão.</p>
+            </div>
+
+            <form id="formulario">
+
+                <div class="campo">
+                    <label for="nome">Nome do participante</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        maxlength="60"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="nascimento">Data de nascimento</label>
+                    <input type="date" id="nascimento" required>
+                </div>
+
+                <div class="linha"></div>
+
+                <h2 class="titulo-perguntas">Análise de personalidade</h2>
+
+                <fieldset class="pergunta">
+                    <legend>01. Qual seria sua primeira atitude em um planeta desconhecido?</legend>
+                    <label><input type="radio" name="p1" value="1" required> Construir equipamentos para explorar.</label>
+                    <label><input type="radio" name="p1" value="2"> Analisar amostras e pesquisar o ambiente.</label>
+                    <label><input type="radio" name="p1" value="3"> Sair para conhecer o território.</label>
+                    <label><input type="radio" name="p1" value="4"> Organizar a equipe e planejar a exploração.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>02. Qual atividade você prefere?</legend>
+                    <label><input type="radio" name="p2" value="1" required> Montar e consertar máquinas.</label>
+                    <label><input type="radio" name="p2" value="2"> Fazer experimentos científicos.</label>
+                    <label><input type="radio" name="p2" value="3"> Explorar lugares novos.</label>
+                    <label><input type="radio" name="p2" value="4"> Criar estratégias e organizar tarefas.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>03. Diante de um problema inesperado, você...</legend>
+                    <label><input type="radio" name="p3" value="1" required> Procura uma solução prática.</label>
+                    <label><input type="radio" name="p3" value="2"> Investiga as causas do problema.</label>
+                    <label><input type="radio" name="p3" value="3"> Testa possibilidades diferentes.</label>
+                    <label><input type="radio" name="p3" value="4"> Avalia os riscos e decide o melhor caminho.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>04. Qual seria sua maior contribuição para a equipe?</legend>
+                    <label><input type="radio" name="p4" value="1" required> Criar soluções e manter os sistemas funcionando.</label>
+                    <label><input type="radio" name="p4" value="2"> Descobrir informações sobre o planeta.</label>
+                    <label><input type="radio" name="p4" value="3"> Encontrar caminhos e novas oportunidades.</label>
+                    <label><input type="radio" name="p4" value="4"> Coordenar pessoas e tomar decisões.</label>
+                </fieldset>
+
+                <p id="mensagem" role="alert"></p>
+
+                <button type="submit" class="botao">
+                    DESCOBRIR MEU PERFIL ↗
+                </button>
+
+            </form>
+        </section>
+
+        <section id="resultado" class="painel resultado" hidden>
+            <p class="selo">RELATÓRIO DE EXPLORAÇÃO • AURA</p>
+            <h2>Perfil identificado!</h2>
+
+            <p id="saudacao"></p>
+
+            <img id="imagemPerfil" src="" alt="Imagem do perfil identificado">
+
+            <p class="categoria" id="categoriaPerfil"></p>
+            <h3 id="nomePerfil"></h3>
+            <p id="descricaoPerfil"></p>
+
+            <div class="recomendacao">
+                <h4>✦ Recomendação para a missão</h4>
+                <p id="recomendacaoPerfil"></p>
+            </div>
+
+            <p id="pontuacao"></p>
+
+            <button type="button" id="refazer" class="botao botao-secundario">
+                -refaça-
+            </button>
+        </section>
+
+        <footer>
+            <p>MISSÃO AURA | DESENVOLVIDO POR DIOGO PUJOL • EXPLORAÇÃO INTERPLANETÁRIA</p>
+            <p id="aura67">aura67</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+/* =====================================================
+   MISSAO AURA — CSS COMPLETO
+   ===================================================== */
+
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* CORES */
+:root {
+    --azul: #55dfff;
+    --azul-claro: #a5f2ff;
+    --azul-brilho: #00bfff;
+    --preto: #020407;
+    --texto: #f5fbff;
+    --texto-suave: #c6d9e4;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background: var(--preto);
+    color: var(--texto);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* FUNDO DA GALÁXIA */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("imagens/galáxia.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.72;
+    z-index: -2;
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 5, 14, 0.42),
+        rgba(0, 5, 14, 0.72)
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    position: relative;
+    text-align: center;
+    padding: 64px 20px 42px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 16, 31, 0.92),
+        rgba(2, 4, 7, 0.25)
+    );
+    border-bottom: 2px solid var(--azul);
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.12);
+}
+
+.cabecalho .selo {
+    color: var(--azul);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* TÍTULO EXTRAVAGANTE */
+.cabecalho h1 {
+    font-family: 'Bungee', cursive !important;
+    font-size: clamp(2.1rem, 6vw, 4.5rem) !important;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 2px !important;
+    color: #ffffff;
+    margin: 16px 0;
+    text-shadow:
+        3px 3px 0 #087ba7,
+        6px 6px 0 rgba(0, 35, 65, 0.85),
+        0 0 14px rgba(85, 223, 255, 0.8),
+        0 0 32px rgba(0, 191, 255, 0.55);
+    overflow-wrap: anywhere;
+}
+
+.cabecalho h1 span {
+    color: var(--azul);
+    text-shadow:
+        2px 2px 0 #ffffff,
+        0 0 12px var(--azul),
+        0 0 28px var(--azul-brilho);
+}
+
+.cabecalho > p:last-child {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #e0f7ff;
+    font-size: 1rem;
+}
+
+/* CONTEÚDO */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 28px 18px;
+    margin: 0 auto;
+}
+
+.painel {
+    width: 100%;
+    padding: 32px;
+    background: rgba(3, 8, 16, 0.91);
+    border: 1px solid rgba(85, 223, 255, 0.72);
+    border-radius: 24px;
+    box-shadow:
+        0 0 24px rgba(0, 191, 255, 0.12),
+        inset 0 0 25px rgba(0, 191, 255, 0.035);
+    backdrop-filter: blur(8px);
+}
+
+/* INTRODUÇÃO */
+.introducao {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.icone {
+    display: inline-block;
+    color: var(--preto);
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+    font-size: 27px;
+    padding: 9px 17px;
+    margin-bottom: 16px;
+    border-radius: 15px;
+    box-shadow: 0 0 22px rgba(85, 223, 255, 0.3);
+}
+
+.introducao h2,
+.titulo-perguntas {
+    color: var(--azul);
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: clamp(1.35rem, 3vw, 1.8rem) !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px;
+    text-shadow: 0 0 14px rgba(85, 223, 255, 0.35);
+}
+
+.introducao p {
+    color: var(--texto-suave);
+}
+
+/* CAMPOS DE NOME E DATA */
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    color: var(--azul);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.campo input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    color: #ffffff;
+    background: rgba(1, 5, 11, 0.92);
+    border: 1px solid #3d8da8;
+    border-radius: 14px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(85, 223, 255, 0.15);
+}
+
+.campo input::placeholder {
+    color: #8ca5b3;
+}
+
+.campo input[type="date"] {
+    color-scheme: dark;
+}
+
+/* LINHA DECORATIVA */
+.linha {
+    height: 2px;
+    margin: 32px 0;
+    border: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--azul),
+        transparent
+    );
+}
+
+/* PERGUNTAS ARREDONDADAS */
+.pergunta {
+    min-width: 0;
+    padding: 22px;
+    margin-bottom: 24px;
+    background: rgba(1, 6, 13, 0.88);
+    border: 1px solid rgba(61, 141, 168, 0.8);
+    border-left: 5px solid var(--azul);
+    border-radius: 22px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pergunta:hover {
+    border-color: var(--azul);
+    transform: translateY(-2px);
+}
+
+.pergunta legend {
+    max-width: 100%;
+    padding: 0 10px;
+    color: #8beaff;
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5;
+}
+
+/* ALTERNATIVAS */
+.pergunta label {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 12px 13px;
+    margin-top: 6px;
+    color: #f4fbff;
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 500;
+    line-height: 1.6;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.pergunta label:hover {
+    color: var(--azul-claro);
+    background: rgba(85, 223, 255, 0.08);
+    border-color: rgba(85, 223, 255, 0.28);
+}
+
+.pergunta input[type="radio"] {
+    accent-color: var(--azul);
+    margin-top: 6px;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* BOTÃO PRINCIPAL */
+.botao {
+    display: block;
+    width: 100%;
+    padding: 16px 18px;
+    margin-top: 22px;
+    color: #00111c;
+    background: linear-gradient(
+        110deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(85, 223, 255, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover {
+    background: #ffffff;
+    box-shadow: 0 0 28px rgba(85, 223, 255, 0.65);
+    transform: translateY(-2px);
+}
+
+.botao:focus-visible,
+.botao-secundario:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+#mensagem {
+    min-height: 1.5em;
+    color: #ffffff;
+    margin-top: 13px;
+    text-align: center;
+}
+
+/* RESULTADO DO PERFIL */
+.resultado {
+    text-align: center;
+}
+
+.resultado > h2 {
+    color: var(--azul);
+    font-family: 'Bungee', cursive;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    line-height: 1.4;
+    margin-bottom: 18px;
+    text-shadow: 0 0 16px rgba(85, 223, 255, 0.4);
+}
+
+#resultado {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 36px auto;
+    padding: 36px;
+    background: linear-gradient(
+        145deg,
+        rgba(0, 15, 35, 0.97),
+        rgba(5, 5, 20, 0.96),
+        rgba(0, 45, 75, 0.94)
+    );
+    border: 1px solid var(--azul);
+    border-left: 5px solid var(--azul);
+    border-radius: 8px 28px 8px 28px;
+    box-shadow:
+        0 0 18px rgba(0, 207, 255, 0.3),
+        0 0 42px rgba(0, 207, 255, 0.13),
+        inset 0 0 25px rgba(0, 207, 255, 0.05);
+    animation: entradaAura 0.7s ease both;
+}
+
+#resultado::before {
+    content: "AURA // ARQUIVO ESPACIAL";
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 25px;
+    padding: 7px 12px;
+    color: var(--azul);
+    border: 1px solid rgba(114, 229, 255, 0.6);
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* SAUDAÇÃO */
+#saudacao {
+    color: #ffffff;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(85, 223, 255, 0.55);
+    margin-bottom: 20px;
+}
+
+/* NOME DO PERFIL */
+#nomePerfil {
+    margin: 20px 0 14px;
+    color: #ffffff;
+    font-family: 'Bungee', cursive !important;
+    font-size: clamp(1.5rem, 4vw, 2.6rem);
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+    text-shadow:
+        3px 3px 0 #087ba7,
+        0 0 16px rgba(85, 223, 255, 0.65);
+}
+
+/* CATEGORIA DO PERFIL */
+.categoria,
+#categoriaPerfil {
+    display: inline-block;
+    margin: 12px auto 20px;
+    padding: 9px 16px;
+    color: #00111c;
+    background: linear-gradient(
+        110deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+    border-radius: 999px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 0 18px rgba(85, 223, 255, 0.35);
+}
+
+/* DESCRIÇÃO */
+#descricaoPerfil {
+    max-width: 720px;
+    margin: 20px auto;
+    color: #eaf8ff;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.85;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* IMAGEM DO PERFIL */
+#imagemPerfil {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    max-height: 360px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin: 28px auto;
+    background: #020407;
+    border: 2px solid var(--azul);
+    border-radius: 18px;
+    box-shadow:
+        0 0 18px rgba(85, 223, 255, 0.45),
+        0 0 38px rgba(0, 150, 255, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#imagemPerfil:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(85, 223, 255, 0.65);
+}
+
+/* RECOMENDAÇÃO */
+#recomendacaoPerfil,
+.recomendacao {
+    margin: 26px 0;
+    padding: 20px 22px
+}
